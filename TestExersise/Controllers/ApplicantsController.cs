@@ -14,6 +14,8 @@ public class ApplicantController: ControllerBase
     //Context is set
     public ApplicantController(ApplicantsDbContext context) => _context = context; 
     
+    
+    
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     public async Task<IActionResult> Post(Applicant user)
@@ -24,8 +26,7 @@ public class ApplicantController: ControllerBase
         
         
         //Calculate the applicants age by subtracting there date of birth from the date today. 
-        var today = DateTime.Today;
-        var age = today.Year - user.Dob.Year;
+        var age = CalculateAge(user.Dob); 
         
         //Check the applicant is old enough to be eligible for a credit card 
         if (age >= 18)
@@ -85,5 +86,14 @@ public class ApplicantController: ControllerBase
     {
         var applicant = await _context.Applicants.FindAsync(id);
         return applicant == null ? NotFound() : Ok(applicant); 
+    }
+    
+    //Function to calculate date of birth of the applicant
+    public int CalculateAge(DateTime dob)
+    {
+        var today = DateTime.Today;
+        var age = today.Year - dob.Year;
+        
+        return (age); 
     }
 }
