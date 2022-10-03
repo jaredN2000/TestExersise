@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TestExersise;
 using TestExersise.Data;
 
 namespace TestExersise.Controllers;
@@ -13,8 +12,6 @@ public class ApplicantController: ControllerBase
     private readonly ApplicantsDbContext _context;
     //Context is set
     public ApplicantController(ApplicantsDbContext context) => _context = context; 
-    
-    
     
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]

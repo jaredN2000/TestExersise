@@ -10,7 +10,6 @@ public class ApplicantsDbContext : DbContext
     {
         
     }
-
-    public DbSet<Applicant> Applicants { get; set; }
-    public DbSet<Cards> Cards { get; set; }
+    public virtual DbSet<Applicant> Applicants { get; set; }
+    public virtual DbSet<Cards> Cards { get; set; }
 }
