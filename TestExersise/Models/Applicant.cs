@@ -19,5 +19,5 @@ public class Applicant
     
     public int Income { get; set;}
 
-    public Cards? AvaliableCards { get; set; }
+    public int? CardID { get; set; }
 }

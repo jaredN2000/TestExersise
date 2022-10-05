@@ -8,44 +8,58 @@ namespace TechExersiseTests;
 
 public class Tests
 {
+    DecisionEngine decisionEngine = new DecisionEngine();
     
-    TestExersise.Controllers.ApplicantController test;
     [SetUp]
     public void Setup()
     {
-        var options = new DbContextOptions<ApplicantsDbContext>();
-        var mockDbContext = new Mock<ApplicantsDbContext>(options);
-        var mockApplicantsDBset = new Mock<DbSet<Applicant>>(); 
-        var mockCardsDBset = new Mock<DbSet<Cards>>();
-        mockDbContext.Setup(m => m.Applicants).Returns(mockApplicantsDBset.Object); 
-        mockDbContext.Setup(m => m.Cards).Returns(mockCardsDBset.Object); 
-        test = new TestExersise.Controllers.ApplicantController(mockDbContext.Object); 
        
     }
     
-
     [Test]
-    public void CheckBarclycardOutput()
+    public void CheckAge()
     {
-        var applicant = new Applicant()
-        {
-            FirstName = "Jared",
-            LastName = "Norton",
-            Dob = new DateTime(2000, 10, 02),
-            Income = 30000
-        };
+        var dob = new DateTime(2000, 10, 02);
+        var expected = 22; 
 
-        var card = new Cards()
-        {
-            CardName = "Barclaycard",
-            Apr = 18,
-            PromoMeg = "A lot of life can happen in two years"
-        };
-        var expected = new JsonResult(card);
-
-        var output = test.Post(applicant);
-        var result = output.Result; 
+        var result =  decisionEngine.GetAge(dob); 
         
         Assert.That(result, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void CheckBarclycard()
+    {
+        var applicant = new Applicant()
+        {
+            FirstName = "Jhon",
+            LastName = "Smith",
+            Income = 30000,
+            Dob = new DateTime(2002, 10, 02)
+        };
+        var expected = "Barclaycard";
+
+        var result = decisionEngine.GetCard(applicant); 
+        
+        Assert.That(result.Cards.CardName, Is.EqualTo(expected));
+    }
+    
+    [Test]
+    public void CheckVanquis()
+    {
+        var applicant = new Applicant()
+        {
+            FirstName = "Jhon",
+            LastName = "Smith",
+            Income = 2000,
+            Dob = new DateTime(2002, 10, 02)
+        };
+        var expected = "Vanquis";
+
+        var result = decisionEngine.GetCard(applicant); 
+        
+        Assert.That(result.Cards.CardName, Is.EqualTo(expected));
+    }
+    
+    
 }
