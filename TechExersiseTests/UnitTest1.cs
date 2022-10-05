@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using TestExersise;
@@ -9,8 +9,7 @@ namespace TechExersiseTests;
 public class Tests
 {
     
-    TestExersise.Controllers.ApplicantController test; 
-    
+    TestExersise.Controllers.ApplicantController test;
     [SetUp]
     public void Setup()
     {
@@ -23,16 +22,30 @@ public class Tests
         test = new TestExersise.Controllers.ApplicantController(mockDbContext.Object); 
        
     }
-
     
+
     [Test]
-    public void CheckAge()
+    public void CheckBarclycardOutput()
     {
-        var eighteenYearsOld = new DateTime(2004, 01, 02);
+        var applicant = new Applicant()
+        {
+            FirstName = "Jared",
+            LastName = "Norton",
+            Dob = new DateTime(2000, 10, 02),
+            Income = 30000
+        };
 
-        var result = test.CalculateAge(eighteenYearsOld); 
+        var card = new Cards()
+        {
+            CardName = "Barclaycard",
+            Apr = 18,
+            PromoMeg = "A lot of life can happen in two years"
+        };
+        var expected = new JsonResult(card);
+
+        var output = test.Post(applicant);
+        var result = output.Result; 
         
-        Assert.AreEqual(18, result);
+        Assert.That(result, Is.EqualTo(expected));
     }
-    
 }

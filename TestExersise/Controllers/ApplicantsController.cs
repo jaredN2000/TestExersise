@@ -6,6 +6,7 @@ namespace TestExersise.Controllers;
 [ApiController]
 [Route("[controller]")]
 [ProducesResponseType(StatusCodes.Status201Created)]
+[ProducesResponseType(StatusCodes.Status400BadRequest)]
 public class ApplicantController: ControllerBase
 {
     // The context for the database that stores the applicant data
@@ -23,7 +24,8 @@ public class ApplicantController: ControllerBase
         
         
         //Calculate the applicants age by subtracting there date of birth from the date today. 
-        var age = CalculateAge(user.Dob); 
+        var today = DateTime.Today;
+        var age = today.Year - user.Dob.Year;
         
         //Check the applicant is old enough to be eligible for a credit card 
         if (age >= 18)
@@ -37,7 +39,9 @@ public class ApplicantController: ControllerBase
                 //Applicant has an income of £30,000 or more and so should be offered a Barclaycard credit card
                 user.AvaliableCards = new Cards
                 {
-                     CardName = "Barclaycard", Apr = 18, PromoMeg = "A lot of life can happen in two years"
+                     CardName = "Barclaycard",
+                     Apr = 18,
+                     PromoMeg = "A lot of life can happen in two years"
                 }; 
             }
             else
@@ -45,7 +49,9 @@ public class ApplicantController: ControllerBase
                 //Applicant has an income of less than £30,000 and so should be offered a Vanquis credit card 
                 user.AvaliableCards = new Cards
                 {
-                    CardName = "Vanquis", Apr = 28, PromoMeg = "Discover a credit card to suit you."
+                    CardName = "Vanquis",
+                    Apr = 28,
+                    PromoMeg = "Discover a credit card to suit you."
                 }; 
             }
         }
@@ -56,7 +62,9 @@ public class ApplicantController: ControllerBase
         {
             user.AvaliableCards = new Cards
             {
-                 CardName = "No cards", Apr = 0, PromoMeg = "You must be 18 years old to have a credit card"
+                 CardName = "No cards",
+                 Apr = 0,
+                 PromoMeg = "You must be 18 years old to have a credit card"
             }; 
         }
         
@@ -83,14 +91,5 @@ public class ApplicantController: ControllerBase
     {
         var applicant = await _context.Applicants.FindAsync(id);
         return applicant == null ? NotFound() : Ok(applicant); 
-    }
-    
-    //Function to calculate date of birth of the applicant
-    public int CalculateAge(DateTime dob)
-    {
-        var today = DateTime.Today;
-        var age = today.Year - dob.Year;
-        
-        return (age); 
     }
 }

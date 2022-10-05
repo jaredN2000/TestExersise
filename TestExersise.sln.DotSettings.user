@@ -1,7 +1,7 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e722ac06_002D069d_002D4409_002D9405_002D13fa9ca0cc9a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CheckAge" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b0dcf5eb_002D4dfc_002D4eac_002D943f_002Deac24095a032/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CheckBarclycardOutput" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::CBB980DF-CA01-4A9D-94A0-5FF8B5C60379::net6.0::TechExersiseTests.Tests.CheckAge&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::CBB980DF-CA01-4A9D-94A0-5FF8B5C60379::net6.0::TechExersiseTests.Tests.CheckImpossibleAge&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::CBB980DF-CA01-4A9D-94A0-5FF8B5C60379::net6.0::TechExersiseTests.Tests.CheckBarclycardOutput&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
+&lt;/SessionState&gt;</s:String>
+	</wpf:ResourceDictionary>
