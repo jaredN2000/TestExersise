@@ -13,7 +13,7 @@ public class DecisionEngine
     public ICheckEligibility GetCard(Applicant applicant)
     {
         var age = GetAge(applicant.Dob);
-        Cards? card;
+        Cards card;
 
         var income = applicant.Income;
         
@@ -26,7 +26,7 @@ public class DecisionEngine
             }
         }
 
-        return null; 
+        return new NoCardsAvaliable(); 
     }
     
     

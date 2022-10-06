@@ -11,10 +11,7 @@ public class Tests
     DecisionEngine decisionEngine = new DecisionEngine();
     
     [SetUp]
-    public void Setup()
-    {
-       
-    }
+    public void Setup() { }
     
     [Test]
     public void CheckAge()
@@ -61,5 +58,20 @@ public class Tests
         Assert.That(result.Cards.CardName, Is.EqualTo(expected));
     }
     
+    [Test]
+    public void CheckNotEligible()
+    {
+        var applicant = new Applicant()
+        {
+            FirstName = "Jhon",
+            LastName = "Smith",
+            Income = 2000,
+            Dob = new DateTime(2022, 10, 02)
+        };
+
+        var result = decisionEngine.GetCard(applicant); 
+        
+        Assert.That(result.Cards, Is.EqualTo(null));
+    }
     
 }

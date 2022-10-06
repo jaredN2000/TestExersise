@@ -13,11 +13,6 @@ public class BarclayCard : Cards,ICheckEligibility
 
     public bool CheckEligibility(int age, int income)
     {
-        if (income >= 30000 && age >= 18)
-        {
-            return true; 
-        }
-
-        return false; 
+        return income >= 30000 && age >= 18;
     }
 }

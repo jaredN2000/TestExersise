@@ -16,6 +16,6 @@ public class Cards
     
     public string? PromoMeg { get; set;}
 
-    //public abstract bool CheckEligibility(int age, int income);
+  
 
 }

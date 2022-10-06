@@ -13,11 +13,6 @@ public class Vanquis: Cards,ICheckEligibility
 
     public bool CheckEligibility(int age, int income)
     {
-        if (age >= 18)
-        {
-            return true; 
-        }
-
-        return false; 
+        return age >= 18;
     }
 }

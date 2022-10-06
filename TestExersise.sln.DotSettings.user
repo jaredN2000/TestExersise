@@ -1,5 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2aa6af0a_002Def27_002D4cda_002Db65e_002Deeb896aaa66b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CheckVanquis #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2aa6af0a_002Def27_002D4cda_002Db65e_002Deeb896aaa66b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CheckVanquis #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::CBB980DF-CA01-4A9D-94A0-5FF8B5C60379::net6.0::TechExersiseTests.Tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
@@ -9,9 +9,9 @@
     &lt;TestId&gt;NUnit3x::CBB980DF-CA01-4A9D-94A0-5FF8B5C60379::net6.0::TechExersiseTests.Tests.CheckVanquis&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7262dc57_002D427c_002D46e4_002D9cdf_002D7d8bc50c80ab/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CheckBarclycard" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7262dc57_002D427c_002D46e4_002D9cdf_002D7d8bc50c80ab/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CheckBarclycard" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::CBB980DF-CA01-4A9D-94A0-5FF8B5C60379::net6.0::TechExersiseTests.Tests.CheckBarclycard&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::CBB980DF-CA01-4A9D-94A0-5FF8B5C60379::net6.0::TechExersiseTests.Tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b0dcf5eb_002D4dfc_002D4eac_002D943f_002Deac24095a032/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CheckBarclycardOutput" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;

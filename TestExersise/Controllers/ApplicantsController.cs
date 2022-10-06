@@ -27,25 +27,24 @@ public class ApplicantController: ControllerBase
         await _context.SaveChangesAsync(); 
         
         //Gets the card the user is offered from the decision engine 
-        var card = decisionEngine.GetCard(user).Cards;
+        var Offer = decisionEngine.GetCard(user);
 
-        if (card != null)
+        if (Offer.Cards != null)
         {
             /* TODO only enter a card into card database when the credit card isn't already present in the database
             The current implementation adds the credit card that the applicant is eligible for but does not check 
              in any way if the card is already present in the database. This works for the requirements of the task 
              because the task simply states that looking at the database you should be able to see the card the user was 
              offered. However multiple duplicate cards in the database is redundant and not good practice */
-            await _context.Cards.AddAsync(card);
-            await _context.SaveChangesAsync(); 
-            
-            
+            await _context.Cards.AddAsync(Offer.Cards);
+            await _context.SaveChangesAsync();
+
             //store the offered card in the user
-            user.CardID = card.CardId;
+            user.CardID = Offer.Cards.CardId;
 
             //Returns the card offered
             //Not best practice as a strictly restful API should not be passing data back from a post request 
-            return new CreatedResult("Applicant added to database",new JsonResult(card));
+            return new CreatedResult("Applicant added to database",Offer.Cards);
         } else
         {
             return new OkObjectResult("Applicant is not 18 so cannot be offered any cards");
